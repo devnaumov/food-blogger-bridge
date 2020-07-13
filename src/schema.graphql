@@ -1,0 +1,30 @@
+"Project common user"
+type User {
+  "User id"
+  id: ID!
+  "VKontakte unique identifier"
+  vkUserId: Int!
+  "Full user name"
+  name: String!
+}
+
+type Query {
+  "Returns current user information"
+  user: User
+  "Returns user by specified user id"
+  userById(
+    "Used unique identifier"
+    userId: ID!
+  ): User!
+}
+
+type Mutation {
+  "Registers user. Returns his identifier"
+  register: Int!
+}
+
+
+type Subscription {
+  "Subscribes for current user information updates"
+  user: User
+}
